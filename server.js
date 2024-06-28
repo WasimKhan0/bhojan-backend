@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 4000; // Use PORT from environment variable if 
 
 // Middleware
 const allowedOrigins = [
-    'http://localhost:5173', 
+    'http://localhost:5173',
+    'https://bhojan-food-del-5.onrender.com' 
 ];
 
 app.use(cors({
