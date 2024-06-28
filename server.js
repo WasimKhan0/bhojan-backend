@@ -9,12 +9,11 @@ import orderRouter from "./routes/orderRoute.js";
 
 // Config
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000; // Use PORT from environment variable if available
 
 // Middleware
 const allowedOrigins = [
     'http://localhost:5173', 
-    'https://your-netlify-app-name.netlify.app'  
 ];
 
 app.use(cors({
@@ -26,7 +25,7 @@ app.use(cors({
         }
     },
     methods: 'GET,POST,PUT,DELETE,OPTIONS',
-    allowedHeaders: 'Content-Type,Authorization'
+    allowedHeaders: 'Content-Type,Authorization,token' // Add token here
 }));
 
 app.use(express.json());
